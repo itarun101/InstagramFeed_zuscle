@@ -1,0 +1,16 @@
+{
+  "name": "Zuscle",
+  "handle": "@zuscle",
+  "tagline": "Your AI gym coach",
+  "cta": "Download Zuscle - your AI gym coach",
+  "voice": "Motivating, direct, science-backed, never shaming. Short sentences. Talks like a knowledgeable training partner.",
+  "colors": {
+    "bg_top": "#0B0F1A",
+    "bg_bottom": "#1B1040",
+    "accent": "#7C5CFF",
+    "accent2": "#00E5A8",
+    "text": "#FFFFFF",
+    "muted": "#A9B0C3"
+  },
+  "always_hashtags": ["#zuscle", "#aigymcoach", "#gymtok", "#fitnessmotivation"]
+}
