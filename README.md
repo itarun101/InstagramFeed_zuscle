@@ -17,6 +17,9 @@ export ANTHROPIC_API_KEY=...     # optional; without it you get placeholder copy
 python run.py                    # writes posts/<timestamp>/slide_*.jpg + post.json, prints caption
 ```
 
+Add `--video` to also render a 19-second 1080x1920 Reel (`reel.mp4`, silent, needs `ffmpeg`):
+`python run.py --stage prepare --video --content drafts/post_01.json`. Publishing Reels to Instagram is not wired up yet.
+
 ## One-time setup for auto-posting
 
 1. **Instagram**: switch the account to Business/Creator and link it to a Facebook Page. Create a Meta app,

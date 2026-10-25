@@ -24,13 +24,14 @@ def hex_rgb(h):
     return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
 
 
-def gradient(c1, c2):
-    img = Image.new("RGB", (W, H))
+def gradient(c1, c2, size=(W, H)):
+    w, h = size
+    img = Image.new("RGB", size)
     px = ImageDraw.Draw(img)
     a, b = hex_rgb(c1), hex_rgb(c2)
-    for y in range(H):
-        t = y / (H - 1)
-        px.line([(0, y), (W, y)], fill=tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3)))
+    for y in range(h):
+        t = y / (h - 1)
+        px.line([(0, y), (w, y)], fill=tuple(int(a[i] + (b[i] - a[i]) * t) for i in range(3)))
     return img
 
 
