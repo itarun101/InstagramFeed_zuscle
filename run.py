@@ -27,6 +27,7 @@ def main():
     ap.add_argument("--stage", choices=["prepare", "publish"], default=None,
                     help="prepare: generate+render only; publish: post an already prepared folder")
     ap.add_argument("--dir", help="post folder for --stage publish")
+    ap.add_argument("--content", help="JSON file with hand-written content (skips the Claude call)")
     args = ap.parse_args()
 
     history_file = ROOT / "posts" / "history.json"
@@ -38,7 +39,7 @@ def main():
     else:
         topic = C.pick_topic(history)
         print(f"Topic: {topic['topic']}")
-        data = C.generate(topic, brand)
+        data = json.loads(Path(args.content).read_text()) if args.content else C.generate(topic, brand)
         stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d-%H%M")
         post_dir = ROOT / "posts" / stamp
         paths = render.render_all(data, brand, post_dir)
